@@ -1,8 +1,8 @@
 <%
-  OrthoOnly = NetInfo['netname']
-  OrthoToSem = NetInfo['intervals']
-  SemOnly = NetInfo['ticksPerInterval']
-  SemToOrtho = NetInfo['netType']
+  OrthoOnly = NetInfo['OrthoOnly']
+  OrthoToSem = NetInfo['OrthoToSem']
+  SemOnly = NetInfo['SemOnly']
+  SemToOrtho = NetInfo['SemToOrtho']
   grace = NetInfo['grace']
 %>
 defI: 0
@@ -1721,13 +1721,6 @@ name:	zeal_ortonly freq: ${OrthoOnly} 3	[0-2 min:2 max:2]	[0]	i:	25	30	52	89	204
 name:	zinc_ortonly freq: ${OrthoOnly} 3	[0-2 min:2 max:2]	[0]	i:	25	34	65	80	204	t:	{-}*	[1]	i:  {1} 204  t: {-}*	[2]	i:	{1}204	t:	25	34	65	80	{-}104-203	;
 name:	zion_ortonly freq: ${OrthoOnly} 3	[0-2 min:2 max:2]	[0]	i:	25	34	66	91	204	t:	{-}*	[1]	i:  {1} 204  t: {-}*	[2]	i:	{1}204	t:	25	34	66	91	{-}104-203	;
 name:	zone_ortonly freq: ${OrthoOnly} 3	[0-2 min:2 max:2]	[0]	i:	25	40	65	82	204	t:	{-}*	[1]	i:  {1} 204  t: {-}*	[2]	i:	{1}204	t:	25	40	65	82	{-}104-203	;defI: 0
-defT: 0
-actI: 1
-actT: 1
-
-grace: 0
-;
-
 name: apex_ort freq: ${OrthoToSem} 3 [0-2 min:2 max:2] [0] i: 0 41 56 101 204-206 t: {-} * [1] i: {1} 204-206 t: {-} * [2] i: {1}204-206 {-} 0-203 t: 107 121 127 138 139 168 202  {-} 0-103 ;
 name: awry_ort freq: ${OrthoToSem} 3 [0-2 min:2 max:2] [0] i: 0 48 69 102 204-206 t: {-} * [1] i: {1} 204-206 t: {-} * [2] i: {1}204-206 {-} 0-203 t: 104 107  114 117 133  135  150  162  169 187  {-} 0-103 ;
 name: axis_ort freq: ${OrthoToSem} 3 [0-2 min:2 max:2] [0] i: 0 49 60 96 204-206 t: {-} * [1] i: {1} 204-206 t: {-} * [2] i: {1}204-206 {-} 0-203 t: 104 105  122 133 144 163 182  189 192 193 197 198 {-} 0-103 ;
@@ -3436,14 +3429,6 @@ name: zeal_ort freq: ${OrthoToSem} 3 [0-2 min:2 max:2] [0] i: 25 30 52 89 204-20
 name: zinc_ort freq: ${OrthoToSem} 3 [0-2 min:2 max:2] [0] i: 25 34 65 80 204-206 t: {-} * [1] i: {1} 204-206 t: {-} * [2] i: {1}204-206 {-} 0-203 t:  105 109 113 126  128  130  140 154  171  178 179  202  {-} 0-103 ;
 name: zion_ort freq: ${OrthoToSem} 3 [0-2 min:2 max:2] [0] i: 25 34 66 91 204-206 t: {-} * [1] i: {1} 204-206 t: {-} * [2] i: {1}204-206 {-} 0-203 t:  123  128  130  142 161  168  193 {-} 0-103 ;
 name: zone_ort freq: ${OrthoToSem} 3 [0-2 min:2 max:2] [0] i: 25 40 65 82 204-206 t: {-} * [1] i: {1} 204-206 t: {-} * [2] i: {1}204-206 {-} 0-203 t: 106 107  134  144 152 153  173  178 192  {-} 0-103 ;
-defI: 0
-defT: 0
-actI: 1
-actT: 1
-
-grace: 0
-;
-
 name: apex_semonly freq: ${SemOnly} 3 [0-2 min:2 max:2] [0] i: 107 121 127 138 139 168 202 205 t: {-} * [1] i: {1} 205 t: {-} * [2] i: {1}205 {-} 0-203 204 t: 107 121 127 138 139 168 202 {-} 0-103 ;
 name: awry_semonly freq: ${SemOnly} 3 [0-2 min:2 max:2] [0] i: 104 107 114 117 133 135 150 162 169 187 205 t: {-} * [1] i: {1} 205 t: {-} * [2] i: {1}205 {-} 0-203 204 t: 104 107 114 117 133 135 150 162 169 187 {-} 0-103 ;
 name: axis_semonly freq: ${SemOnly} 3 [0-2 min:2 max:2] [0] i: 104 105 122 133 144 163 182 189 192 193 197 198 205 t: {-} * [1] i: {1} 205 t: {-} * [2] i: {1}205 {-} 0-203 204 t: 104 105 122 133 144 163 182 189 192 193 197 198 {-} 0-103 ;
@@ -5152,14 +5137,6 @@ name: zeal_semonly freq: ${SemOnly} 3 [0-2 min:2 max:2] [0] i: 108 112 127 138 1
 name: zinc_semonly freq: ${SemOnly} 3 [0-2 min:2 max:2] [0] i: 105 109 113 126 128 130 140 154 171 178 179 202 205 t: {-} * [1] i: {1} 205 t: {-} * [2] i: {1}205 {-} 0-203 204 t: 105 109 113 126 128 130 140 154 171 178 179 202 {-} 0-103 ;
 name: zion_semonly freq: ${SemOnly} 3 [0-2 min:2 max:2] [0] i:  123 128 130 142 161 168  193 205 t: {-} * [1] i: {1} 205 t: {-} * [2] i: {1}205 {-} 0-203 204 t:  123 128 130 142 161 168  193 {-} 0-103 ;
 name: zone_semonly freq: ${SemOnly} 3 [0-2 min:2 max:2] [0] i: 106 107 134 144 152 153  173 178 192 205 t: {-} * [1] i: {1} 205 t: {-} * [2] i: {1}205 {-} 0-203 204 t: 106 107 134 144 152 153  173 178 192 {-} 0-103 ;
-defI: 0
-defT: 0
-actI: 1
-actT: 1
-
-grace: 0
-;
-
 name: apex_sem freq: ${SemToOrtho} 3 [0-2 min:2 max:2] [0] i: 107 121 127 138 139 168 202  204-206 t: {-} * [1] i: {1} 204-206 t: {-} *  [2]  i: {1}204-206 {-} 0-203 t: 0 41 56 101 {-} 104-203 ;
 name: awry_sem freq: ${SemToOrtho} 3 [0-2 min:2 max:2] [0] i: 104 107  114 117 133  135  150  162  169 187  204-206 t: {-} * [1] i: {1} 204-206 t: {-} *  [2]  i: {1}204-206 {-} 0-203 t: 0 48 69 102 {-} 104-203 ;
 name: axis_sem freq: ${SemToOrtho} 3 [0-2 min:2 max:2] [0] i: 104 105  122 133 144 163 182  189 192 193 197 198 204-206 t: {-} * [1] i: {1} 204-206 t: {-} *  [2]  i: {1}204-206 {-} 0-203 t: 0 49 60 96 {-} 104-203 ;
