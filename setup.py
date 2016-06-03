@@ -20,6 +20,7 @@ setup(
     packages=['lexdec'],
     long_description=read('README'),
     scripts = ['bin/buildNetFiles.py'],
+    install_requires = ['mako','pyyaml'],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
