@@ -31,11 +31,11 @@ args = p.parse_args()
 PATH_TO_JSON = args.config
 EX_FILENAME = args.output
 IN_FILENAME = os.path.join(os.path.dirname(EX_FILENAME),'network.in')
-#TRAINSCRIPT_FILENAME = os.path.join(os.path.dirname(EX_FILENAME),'trainscript.tcl')
+TRAINSCRIPT_FILENAME = os.path.join(os.path.dirname(EX_FILENAME),'trainscript.tcl')
 
-#resource_path_trainscript = os.path.join('template',trainscript_template_filename)
-#trainscript_template_string = pkg_resources.resource_string(resource_package, resource_path_trainscript)
-#trainscript_template = Template(trainscript_template_string)
+resource_path_trainscript = os.path.join('template','lexdec_trainscript.mako')
+trainscript_template_string = pkg_resources.resource_string(resource_package, resource_path_trainscript)
+trainscript_template = Template(trainscript_template_string)
 
 # Load instructions
 with open(PATH_TO_JSON,'r') as f:
@@ -52,6 +52,6 @@ with open(EX_FILENAME,'w') as f:
     f.write(examples_text.strip())
 
 # Write Trainscript
-#trainscript_text = trainscript_template.render(CONFIG=CONFIG,NETINFO=NETINFO)
-#with open(TRAINSCRIPT_FILENAME,'w') as f:
-#    f.write(trainscript_text.strip())
+trainscript_text = trainscript_template.render(CONFIG=CONFIG)
+with open(TRAINSCRIPT_FILENAME,'w') as f:
+    f.write(trainscript_text.strip())
